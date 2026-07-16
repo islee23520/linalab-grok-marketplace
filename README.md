@@ -9,6 +9,13 @@ A public Grok Build marketplace for connecting Grok to a local
 | --- | --- |
 | cliproxy-api-provider | [islee23520/cliproxy-api-provider](https://github.com/islee23520/cliproxy-api-provider) (git submodule at `plugins/cliproxy-api-provider`) |
 
+**cliproxy-api-provider** fetches `GET /v1/models` from CLIProxyAPI and maintains one clearly marked
+block in the Grok `config.toml`, adding model context windows and explicit reasoning-effort fields
+(including `grok-4.5` with default `xhigh`). It exposes `/cliproxy-sync` and `/cliproxy-status`, and
+runs a quiet sync on `SessionStart`. See the
+[plugin README](https://github.com/islee23520/cliproxy-api-provider) for configuration, write safety,
+and troubleshooting.
+
 ## Install
 
 ```bash
