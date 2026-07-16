@@ -1,8 +1,0 @@
-{
-  "name": "cliproxy-api-provider",
-  "version": "1.0.0",
-  "description": "Safely sync CLIProxyAPI models and reasoning policies into Grok Build.",
-  "author": { "name": "LinaLab" },
-  "license": "MIT",
-  "keywords": ["cliproxy", "models", "provider", "reasoning-effort"]
-}

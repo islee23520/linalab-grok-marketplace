@@ -1,0 +1,3 @@
+[submodule "plugins/cliproxy-api-provider"]
+	path = plugins/cliproxy-api-provider
+	url = https://github.com/islee23520/cliproxy-api-provider.git

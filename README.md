@@ -1,49 +1,50 @@
-# LinaLab Marketplace
+# LinaLab Grok Marketplace
 
-A public-safe Grok Build marketplace for connecting Grok to a local
+A public Grok Build marketplace for connecting Grok to a local
 [CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) OpenAI-compatible gateway.
+
+## Plugins
+
+| Plugin | Source |
+| --- | --- |
+| cliproxy-api-provider | [islee23520/cliproxy-api-provider](https://github.com/islee23520/cliproxy-api-provider) (git submodule at `plugins/cliproxy-api-provider`) |
 
 ## Install
 
-Install from the published marketplace:
-
 ```bash
-grok plugin marketplace add https://github.com/islee23520/linalab.git
+grok plugin marketplace add https://github.com/islee23520/linalab-grok-marketplace.git
 grok plugin install cliproxy-api-provider --trust
 grok plugin enable cliproxy-api-provider
 ```
 
-For local development, replace the GitHub URL with the checkout path, such as `"$PWD"`. If multiple
-marketplace sources expose that plugin name, use the source-qualified identifier shown by
-`grok plugin marketplace list`. A direct repository install is also supported:
+Start CLIProxyAPI on `http://127.0.0.1:8317/v1`, set `CLIPROXY_API_KEY`, then run
+`/cliproxy-sync` or start a new Grok session. See the
+[plugin README](https://github.com/islee23520/cliproxy-api-provider) for configuration, status,
+safety, and troubleshooting details.
 
-```bash
-grok plugin install https://github.com/islee23520/linalab.git#plugins/cliproxy-api-provider --trust
-grok plugin enable cliproxy-api-provider
-```
-
-Grok keeps installed plugins disabled by default, so the enable step is required in addition to
-`--trust`. Start CLIProxyAPI on `http://127.0.0.1:8317/v1`, set the key named by `envKey`
-(default `CLIPROXY_API_KEY`), then run `/cliproxy-sync` or start a new Grok session.
-
-See [the provider README](plugins/cliproxy-api-provider/README.md) for configuration,
-status, safety, troubleshooting, and uninstall instructions.
+> **Submodule note:** This marketplace references its plugin through a git submodule. If
+> `grok plugin marketplace add` does not initialize submodules automatically and the plugin appears
+> missing, clone with `--recurse-submodules` or run `git submodule update --init` in the marketplace
+> checkout before installing.
 
 ## Development
 
 ```bash
+git submodule update --init --recursive
 bun install
-bun test
-bun run typecheck
+bun test             # validate marketplace manifests
 bun run lint
-bun run build
-grok plugin validate plugins/cliproxy-api-provider
-bun run smoke:grok
+bun run format:check
 ```
 
-The generated `plugins/cliproxy-api-provider/dist/cli.mjs` is committed so plugin users
-only need Node.js, not Bun or a dependency install. Development dependencies are exactly pinned;
-the checked-in standalone distribution is the installable artifact.
+The plugin itself is developed in its own repository. Update the pinned submodule with:
+
+```bash
+git submodule update --remote plugins/cliproxy-api-provider
+```
+
+Where the `grok` CLI is available, also run `grok plugin validate` and an isolated local install
+smoke test before handoff.
 
 ## License
 
