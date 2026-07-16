@@ -1,0 +1,6 @@
+node_modules/
+.gjc/
+.tmp/
+.bun-cache/
+coverage/
+*.tmp-*

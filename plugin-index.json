@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "plugins": {
+    "cliproxy-api-provider": {
+      "components": {
+        "commands": [
+          {
+            "name": "cliproxy-status",
+            "description": "Show CLIProxyAPI connectivity and Grok managed-config status"
+          },
+          {
+            "name": "cliproxy-sync",
+            "description": "Sync CLIProxyAPI models and Grok reasoning policies"
+          }
+        ],
+        "hooks": [{ "name": "SessionStart" }]
+      }
+    }
+  }
+}
