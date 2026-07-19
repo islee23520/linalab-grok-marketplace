@@ -1,0 +1,15 @@
+{
+  "name": "cliproxy-api-provider",
+  "version": "1.1.0",
+  "description": "Sync CLIProxyAPI models into Grok using shared model-catalog.json SSOT (context windows + reasoning).",
+  "author": {
+    "name": "LinaLab"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cliproxy",
+    "models",
+    "provider",
+    "reasoning-effort"
+  ]
+}

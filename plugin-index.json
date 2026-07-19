@@ -13,7 +13,11 @@
             "description": "Sync CLIProxyAPI models and Grok reasoning policies"
           }
         ],
-        "hooks": [{ "name": "SessionStart" }]
+        "hooks": [
+          {
+            "name": "SessionStart"
+          }
+        ]
       }
     }
   }

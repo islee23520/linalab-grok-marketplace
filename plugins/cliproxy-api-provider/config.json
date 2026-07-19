@@ -1,0 +1,11 @@
+{
+  "apiBackend": "chat_completions",
+  "allowRemoteBaseUrl": false,
+  "baseUrl": "http://127.0.0.1:8317/v1",
+  "defaultModel": "grok-4.5",
+  "defaultReasoningEffort": "xhigh",
+  "envKey": "CLIPROXY_API_KEY",
+  "timeoutMs": 4000,
+  "webSearch": "grok-4.20-multi-agent-0309",
+  "catalogPath": "~/.agents/references/model-catalog.json"
+}

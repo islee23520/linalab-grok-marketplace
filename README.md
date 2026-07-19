@@ -7,7 +7,7 @@ A public Grok Build marketplace for connecting Grok to a local
 
 | Plugin | Source |
 | --- | --- |
-| cliproxy-api-provider | [islee23520/cliproxy-api-provider](https://github.com/islee23520/cliproxy-api-provider) (git submodule at `plugins/cliproxy-api-provider`) |
+| cliproxy-api-provider | Vendored at `plugins/cliproxy-api-provider` (source of truth also at [islee23520/cliproxy-api-provider](https://github.com/islee23520/cliproxy-api-provider)) |
 
 **cliproxy-api-provider** fetches `GET /v1/models` from CLIProxyAPI and maintains one clearly marked
 block in the Grok `config.toml`, adding model context windows and explicit reasoning-effort fields
@@ -29,29 +29,34 @@ Start CLIProxyAPI on `http://127.0.0.1:8317/v1`, set `CLIPROXY_API_KEY`, then ru
 [plugin README](https://github.com/islee23520/cliproxy-api-provider) for configuration, status,
 safety, and troubleshooting details.
 
-> **Submodule note:** This marketplace references its plugin through a git submodule. If
-> `grok plugin marketplace add` does not initialize submodules automatically and the plugin appears
-> missing, clone with `--recurse-submodules` or run `git submodule update --init` in the marketplace
-> checkout before installing.
 
 ## Development
 
 ```bash
-git submodule update --init --recursive
 bun install
 bun test             # validate marketplace manifests
 bun run lint
 bun run format:check
 ```
 
-The plugin itself is developed in its own repository. Update the pinned submodule with:
+The plugin is **vendored** under `plugins/cliproxy-api-provider` (Grok marketplace
+clones do not initialize git submodules, so a submodule left the install path empty).
+
+Upstream development repo: https://github.com/islee23520/cliproxy-api-provider  
+To refresh the vendored copy after a plugin release:
 
 ```bash
-git submodule update --remote plugins/cliproxy-api-provider
+rsync -a --delete --exclude .git --exclude node_modules \
+  /path/to/cliproxy-api-provider/ plugins/cliproxy-api-provider/
+# keep marketplace.json + .grok-plugin/marketplace.json versions in sync
 ```
 
-Where the `grok` CLI is available, also run `grok plugin validate` and an isolated local install
-smoke test before handoff.
+Where the `grok` CLI is available:
+
+```bash
+grok plugin validate ./plugins/cliproxy-api-provider
+grok plugin install ./plugins/cliproxy-api-provider --trust
+```
 
 ## License
 
