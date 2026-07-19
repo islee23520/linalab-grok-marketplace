@@ -11,7 +11,7 @@ A public Grok Build marketplace for connecting Grok to a local
 
 **cliproxy-api-provider** fetches `GET /v1/models` from CLIProxyAPI and maintains one clearly marked
 block in the Grok `config.toml`, adding model context windows and explicit reasoning-effort fields
-(including `grok-4.5` with default `xhigh`). It exposes `/cliproxy-sync` and `/cliproxy-status`, and
+(including `grok-4.5` at **500k** context with default `xhigh`; context windows from `~/.agents/references/model-catalog.json`). It exposes `/cliproxy-sync` and `/cliproxy-status`, and
 runs a quiet sync on `SessionStart`. See the
 [plugin README](https://github.com/islee23520/cliproxy-api-provider) for configuration, write safety,
 and troubleshooting.
