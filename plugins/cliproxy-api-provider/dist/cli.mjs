@@ -14334,7 +14334,7 @@ var ApiKeySchema = exports_external.string().refine((value) => value.trim().leng
 var PluginConfigSchema = exports_external.object({
   apiBackend: exports_external.string().min(1).default("chat_completions"),
   allowRemoteBaseUrl: exports_external.boolean().default(false),
-  baseUrl: exports_external.url().default("http://127.0.0.1:8317/v1"),
+  baseUrl: exports_external.url().optional(),
   configPath: exports_external.string().min(1).optional(),
   defaultModel: exports_external.string().min(1).default("grok-4.5"),
   defaultReasoningEffort: ReasoningEffortSchema.default("xhigh"),
@@ -14379,6 +14379,9 @@ async function loadSettings(environment) {
     throw new ConfigurationError(exports_external.prettifyError(parsed.error));
   const config2 = parsed.data;
   const baseUrl = env.CLIPROXY_BASE_URL ?? config2.baseUrl;
+  if (!baseUrl) {
+    throw new ConfigurationError("baseUrl must be set in config.json or via CLIPROXY_BASE_URL environment variable");
+  }
   const hostname3 = new URL(baseUrl).hostname;
   const loopback = hostname3 === "127.0.0.1" || hostname3 === "::1" || hostname3 === "localhost";
   if (!loopback && !config2.allowRemoteBaseUrl)

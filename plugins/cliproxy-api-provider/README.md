@@ -80,6 +80,11 @@ repository or written to `config.toml`.
 override fields verified through runtime `/effort` selection and the resulting sampling request.
 User-guide coverage may lag the runtime behavior.
 
+
+> **`baseUrl` is not hardcoded.** Set it in `config.json` (plugin dir or
+> `$GROK_HOME/plugin-data/cliproxy-api-provider/config.json`) or via the
+> `CLIPROXY_BASE_URL` environment variable. The plugin refuses to start
+> if neither is provided.
 ## Write safety
 
 - Only blocks between the provider markers and known legacy `ocx-models-plugin` markers are removed.

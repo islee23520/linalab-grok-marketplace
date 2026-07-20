@@ -9,6 +9,7 @@ describe("loadSettings", () => {
   test("Given only XAI_API_KEY When settings load Then the dedicated key is reported missing", async () => {
     // Given
     const environment = {
+      CLIPROXY_BASE_URL: "http://127.0.0.1:8317/v1",
       GROK_HOME: "/private/tmp/cliproxy-schema-xai",
       GROK_PLUGIN_ROOT: pluginRoot,
       XAI_API_KEY: "must-not-forward",
@@ -26,6 +27,7 @@ describe("loadSettings", () => {
     // Given
     const environment = {
       CLIPROXY_API_KEY: "dedicated-key",
+      CLIPROXY_BASE_URL: "http://127.0.0.1:8317/v1",
       GROK_HOME: "/private/tmp/cliproxy-schema-dedicated",
       GROK_PLUGIN_ROOT: pluginRoot,
       XAI_API_KEY: "high-value-key",

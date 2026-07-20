@@ -11,7 +11,7 @@ const PluginConfigSchema = z
   .object({
     apiBackend: z.string().min(1).default("chat_completions"),
     allowRemoteBaseUrl: z.boolean().default(false),
-    baseUrl: z.url().default("http://127.0.0.1:8317/v1"),
+    baseUrl: z.url().optional(),
     configPath: z.string().min(1).optional(),
     defaultModel: z.string().min(1).default("grok-4.5"),
     defaultReasoningEffort: ReasoningEffortSchema.default("xhigh"),
@@ -42,7 +42,8 @@ const EnvironmentSchema = z
   })
   .loose()
 
-export type Settings = Readonly<z.infer<typeof PluginConfigSchema>> & {
+export type Settings = Omit<Readonly<z.infer<typeof PluginConfigSchema>>, "baseUrl"> & {
+  readonly baseUrl: string
   readonly apiKey: string
   readonly configPath: string
   readonly dataPath: string
@@ -74,6 +75,11 @@ export async function loadSettings(environment: NodeJS.ProcessEnv): Promise<Sett
   if (!parsed.success) throw new ConfigurationError(z.prettifyError(parsed.error))
   const config = parsed.data
   const baseUrl = env.CLIPROXY_BASE_URL ?? config.baseUrl
+  if (!baseUrl) {
+    throw new ConfigurationError(
+      "baseUrl must be set in config.json or via CLIPROXY_BASE_URL environment variable",
+    )
+  }
   const hostname = new URL(baseUrl).hostname
   const loopback = hostname === "127.0.0.1" || hostname === "::1" || hostname === "localhost"
   if (!loopback && !config.allowRemoteBaseUrl)
