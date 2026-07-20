@@ -7,8 +7,8 @@
   "plugins": [
     {
       "name": "cliproxy-api-provider",
-      "description": "Sync CLIProxyAPI models using shared model-catalog.json SSOT; Kimi K3 reasoning_effort=low|high|max.",
-      "version": "1.2.1",
+      "description": "Sync CLIProxyAPI models using shared model-catalog.json SSOT. Endpoint from env/config only.",
+      "version": "1.3.0",
       "source": "./plugins/cliproxy-api-provider",
       "category": "development",
       "keywords": [
