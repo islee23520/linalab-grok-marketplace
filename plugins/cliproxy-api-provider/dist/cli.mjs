@@ -14401,7 +14401,7 @@ async function loadSettings(environment) {
     catalogPath: env.MODEL_CATALOG ?? config2.catalogPath
   };
 }
-var ModelCatalogSchema = exports_external.object({ data: exports_external.array(exports_external.object({ id: exports_external.string().regex(/^[A-Za-z0-9._:/-]+$/) })) }).strict();
+var ModelCatalogSchema = exports_external.object({ data: exports_external.array(exports_external.object({ id: exports_external.string().regex(/^[A-Za-z0-9._:/-]+$/) })) }).loose();
 
 // src/client.ts
 async function fetchModelIds(baseUrl, apiKey, timeoutMs) {

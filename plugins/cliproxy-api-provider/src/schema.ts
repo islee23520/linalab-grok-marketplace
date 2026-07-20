@@ -99,4 +99,4 @@ export async function loadSettings(environment: NodeJS.ProcessEnv): Promise<Sett
 
 export const ModelCatalogSchema = z
   .object({ data: z.array(z.object({ id: z.string().regex(/^[A-Za-z0-9._:/-]+$/) })) })
-  .strict()
+  .loose()
