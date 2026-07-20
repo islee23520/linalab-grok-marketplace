@@ -18,7 +18,7 @@ import path4 from "node:path";
 import { realpath } from "node:fs/promises";
 import { fileURLToPath as fileURLToPath2 } from "node:url";
 
-// node_modules/zod/v4/classic/external.js
+// ../../node_modules/zod/v4/classic/external.js
 var exports_external = {};
 __export(exports_external, {
   xor: () => xor,
@@ -261,7 +261,7 @@ __export(exports_external, {
   $brand: () => $brand
 });
 
-// node_modules/zod/v4/core/index.js
+// ../../node_modules/zod/v4/core/index.js
 var exports_core2 = {};
 __export(exports_core2, {
   version: () => version,
@@ -540,7 +540,7 @@ __export(exports_core2, {
   $ZodAny: () => $ZodAny
 });
 
-// node_modules/zod/v4/core/core.js
+// ../../node_modules/zod/v4/core/core.js
 var _a;
 var NEVER = /* @__PURE__ */ Object.freeze({
   status: "aborted"
@@ -618,7 +618,7 @@ function config(newConfig) {
     Object.assign(globalConfig, newConfig);
   return globalConfig;
 }
-// node_modules/zod/v4/core/util.js
+// ../../node_modules/zod/v4/core/util.js
 var exports_util = {};
 __export(exports_util, {
   unwrapMessage: () => unwrapMessage,
@@ -1310,7 +1310,7 @@ class Class {
   constructor(..._args) {}
 }
 
-// node_modules/zod/v4/core/errors.js
+// ../../node_modules/zod/v4/core/errors.js
 var initializer = (inst, def) => {
   inst.name = "$ZodError";
   Object.defineProperty(inst, "_zod", {
@@ -1450,7 +1450,7 @@ function prettifyError(error) {
 `);
 }
 
-// node_modules/zod/v4/core/parse.js
+// ../../node_modules/zod/v4/core/parse.js
 var _parse = (_Err) => (schema, value, _ctx, _params) => {
   const ctx = _ctx ? { ..._ctx, async: false } : { async: false };
   const result = schema._zod.run({ value, issues: [] }, ctx);
@@ -1537,7 +1537,7 @@ var _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
   return _safeParseAsync(_Err)(schema, value, _ctx);
 };
 var safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync($ZodRealError);
-// node_modules/zod/v4/core/regexes.js
+// ../../node_modules/zod/v4/core/regexes.js
 var exports_regexes = {};
 __export(exports_regexes, {
   xid: () => xid,
@@ -1696,7 +1696,7 @@ var sha512_hex = /^[0-9a-fA-F]{128}$/;
 var sha512_base64 = /* @__PURE__ */ fixedBase64(86, "==");
 var sha512_base64url = /* @__PURE__ */ fixedBase64url(86);
 
-// node_modules/zod/v4/core/checks.js
+// ../../node_modules/zod/v4/core/checks.js
 var $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
   var _a2;
   inst._zod ?? (inst._zod = {});
@@ -2243,7 +2243,7 @@ var $ZodCheckOverwrite = /* @__PURE__ */ $constructor("$ZodCheckOverwrite", (ins
   };
 });
 
-// node_modules/zod/v4/core/doc.js
+// ../../node_modules/zod/v4/core/doc.js
 class Doc {
   constructor(args = []) {
     this.content = [];
@@ -2281,14 +2281,14 @@ class Doc {
   }
 }
 
-// node_modules/zod/v4/core/versions.js
+// ../../node_modules/zod/v4/core/versions.js
 var version = {
   major: 4,
   minor: 4,
   patch: 3
 };
 
-// node_modules/zod/v4/core/schemas.js
+// ../../node_modules/zod/v4/core/schemas.js
 var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   var _a2;
   inst ?? (inst = {});
@@ -4372,7 +4372,7 @@ function handleRefineResult(result, payload, input, inst) {
     payload.issues.push(issue(_iss));
   }
 }
-// node_modules/zod/v4/locales/index.js
+// ../../node_modules/zod/v4/locales/index.js
 var exports_locales = {};
 __export(exports_locales, {
   zhTW: () => zh_TW_default,
@@ -4429,7 +4429,7 @@ __export(exports_locales, {
   ar: () => ar_default
 });
 
-// node_modules/zod/v4/locales/ar.js
+// ../../node_modules/zod/v4/locales/ar.js
 var error = () => {
   const Sizable = {
     string: { unit: "حرف", verb: "أن يحوي" },
@@ -4535,7 +4535,7 @@ function ar_default() {
     localeError: error()
   };
 }
-// node_modules/zod/v4/locales/az.js
+// ../../node_modules/zod/v4/locales/az.js
 var error2 = () => {
   const Sizable = {
     string: { unit: "simvol", verb: "olmalıdır" },
@@ -4640,7 +4640,7 @@ function az_default() {
     localeError: error2()
   };
 }
-// node_modules/zod/v4/locales/be.js
+// ../../node_modules/zod/v4/locales/be.js
 function getBelarusianPlural(count, one, few, many) {
   const absCount = Math.abs(count);
   const lastDigit = absCount % 10;
@@ -4796,7 +4796,7 @@ function be_default() {
     localeError: error3()
   };
 }
-// node_modules/zod/v4/locales/bg.js
+// ../../node_modules/zod/v4/locales/bg.js
 var error4 = () => {
   const Sizable = {
     string: { unit: "символа", verb: "да съдържа" },
@@ -4916,7 +4916,7 @@ function bg_default() {
     localeError: error4()
   };
 }
-// node_modules/zod/v4/locales/ca.js
+// ../../node_modules/zod/v4/locales/ca.js
 var error5 = () => {
   const Sizable = {
     string: { unit: "caràcters", verb: "contenir" },
@@ -5023,7 +5023,7 @@ function ca_default() {
     localeError: error5()
   };
 }
-// node_modules/zod/v4/locales/cs.js
+// ../../node_modules/zod/v4/locales/cs.js
 var error6 = () => {
   const Sizable = {
     string: { unit: "znaků", verb: "mít" },
@@ -5134,7 +5134,7 @@ function cs_default() {
     localeError: error6()
   };
 }
-// node_modules/zod/v4/locales/da.js
+// ../../node_modules/zod/v4/locales/da.js
 var error7 = () => {
   const Sizable = {
     string: { unit: "tegn", verb: "havde" },
@@ -5249,7 +5249,7 @@ function da_default() {
     localeError: error7()
   };
 }
-// node_modules/zod/v4/locales/de.js
+// ../../node_modules/zod/v4/locales/de.js
 var error8 = () => {
   const Sizable = {
     string: { unit: "Zeichen", verb: "zu haben" },
@@ -5357,7 +5357,7 @@ function de_default() {
     localeError: error8()
   };
 }
-// node_modules/zod/v4/locales/el.js
+// ../../node_modules/zod/v4/locales/el.js
 var error9 = () => {
   const Sizable = {
     string: { unit: "χαρακτήρες", verb: "να έχει" },
@@ -5466,7 +5466,7 @@ function el_default() {
     localeError: error9()
   };
 }
-// node_modules/zod/v4/locales/en.js
+// ../../node_modules/zod/v4/locales/en.js
 var error10 = () => {
   const Sizable = {
     string: { unit: "characters", verb: "to have" },
@@ -5576,7 +5576,7 @@ function en_default() {
     localeError: error10()
   };
 }
-// node_modules/zod/v4/locales/eo.js
+// ../../node_modules/zod/v4/locales/eo.js
 var error11 = () => {
   const Sizable = {
     string: { unit: "karaktrojn", verb: "havi" },
@@ -5685,7 +5685,7 @@ function eo_default() {
     localeError: error11()
   };
 }
-// node_modules/zod/v4/locales/es.js
+// ../../node_modules/zod/v4/locales/es.js
 var error12 = () => {
   const Sizable = {
     string: { unit: "caracteres", verb: "tener" },
@@ -5817,7 +5817,7 @@ function es_default() {
     localeError: error12()
   };
 }
-// node_modules/zod/v4/locales/fa.js
+// ../../node_modules/zod/v4/locales/fa.js
 var error13 = () => {
   const Sizable = {
     string: { unit: "کاراکتر", verb: "داشته باشد" },
@@ -5931,7 +5931,7 @@ function fa_default() {
     localeError: error13()
   };
 }
-// node_modules/zod/v4/locales/fi.js
+// ../../node_modules/zod/v4/locales/fi.js
 var error14 = () => {
   const Sizable = {
     string: { unit: "merkkiä", subject: "merkkijonon" },
@@ -6043,7 +6043,7 @@ function fi_default() {
     localeError: error14()
   };
 }
-// node_modules/zod/v4/locales/fr.js
+// ../../node_modules/zod/v4/locales/fr.js
 var error15 = () => {
   const Sizable = {
     string: { unit: "caractères", verb: "avoir" },
@@ -6168,7 +6168,7 @@ function fr_default() {
     localeError: error15()
   };
 }
-// node_modules/zod/v4/locales/fr-CA.js
+// ../../node_modules/zod/v4/locales/fr-CA.js
 var error16 = () => {
   const Sizable = {
     string: { unit: "caractères", verb: "avoir" },
@@ -6275,7 +6275,7 @@ function fr_CA_default() {
     localeError: error16()
   };
 }
-// node_modules/zod/v4/locales/he.js
+// ../../node_modules/zod/v4/locales/he.js
 var error17 = () => {
   const TypeNames = {
     string: { label: "מחרוזת", gender: "f" },
@@ -6468,7 +6468,7 @@ function he_default() {
     localeError: error17()
   };
 }
-// node_modules/zod/v4/locales/hr.js
+// ../../node_modules/zod/v4/locales/hr.js
 var error18 = () => {
   const Sizable = {
     string: { unit: "znakova", verb: "imati" },
@@ -6590,7 +6590,7 @@ function hr_default() {
     localeError: error18()
   };
 }
-// node_modules/zod/v4/locales/hu.js
+// ../../node_modules/zod/v4/locales/hu.js
 var error19 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "legyen" },
@@ -6698,7 +6698,7 @@ function hu_default() {
     localeError: error19()
   };
 }
-// node_modules/zod/v4/locales/hy.js
+// ../../node_modules/zod/v4/locales/hy.js
 function getArmenianPlural(count, one, many) {
   return Math.abs(count) === 1 ? one : many;
 }
@@ -6845,7 +6845,7 @@ function hy_default() {
     localeError: error20()
   };
 }
-// node_modules/zod/v4/locales/id.js
+// ../../node_modules/zod/v4/locales/id.js
 var error21 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "memiliki" },
@@ -6951,7 +6951,7 @@ function id_default() {
     localeError: error21()
   };
 }
-// node_modules/zod/v4/locales/is.js
+// ../../node_modules/zod/v4/locales/is.js
 var error22 = () => {
   const Sizable = {
     string: { unit: "stafi", verb: "að hafa" },
@@ -7060,7 +7060,7 @@ function is_default() {
     localeError: error22()
   };
 }
-// node_modules/zod/v4/locales/it.js
+// ../../node_modules/zod/v4/locales/it.js
 var error23 = () => {
   const Sizable = {
     string: { unit: "caratteri", verb: "avere" },
@@ -7168,7 +7168,7 @@ function it_default() {
     localeError: error23()
   };
 }
-// node_modules/zod/v4/locales/ja.js
+// ../../node_modules/zod/v4/locales/ja.js
 var error24 = () => {
   const Sizable = {
     string: { unit: "文字", verb: "である" },
@@ -7275,7 +7275,7 @@ function ja_default() {
     localeError: error24()
   };
 }
-// node_modules/zod/v4/locales/ka.js
+// ../../node_modules/zod/v4/locales/ka.js
 var error25 = () => {
   const Sizable = {
     string: { unit: "სიმბოლო", verb: "უნდა შეიცავდეს" },
@@ -7387,7 +7387,7 @@ function ka_default() {
     localeError: error25()
   };
 }
-// node_modules/zod/v4/locales/km.js
+// ../../node_modules/zod/v4/locales/km.js
 var error26 = () => {
   const Sizable = {
     string: { unit: "តួអក្សរ", verb: "គួរមាន" },
@@ -7498,11 +7498,11 @@ function km_default() {
   };
 }
 
-// node_modules/zod/v4/locales/kh.js
+// ../../node_modules/zod/v4/locales/kh.js
 function kh_default() {
   return km_default();
 }
-// node_modules/zod/v4/locales/ko.js
+// ../../node_modules/zod/v4/locales/ko.js
 var error27 = () => {
   const Sizable = {
     string: { unit: "문자", verb: "to have" },
@@ -7613,7 +7613,7 @@ function ko_default() {
     localeError: error27()
   };
 }
-// node_modules/zod/v4/locales/lt.js
+// ../../node_modules/zod/v4/locales/lt.js
 var capitalizeFirstCharacter = (text) => {
   return text.charAt(0).toUpperCase() + text.slice(1);
 };
@@ -7816,7 +7816,7 @@ function lt_default() {
     localeError: error28()
   };
 }
-// node_modules/zod/v4/locales/mk.js
+// ../../node_modules/zod/v4/locales/mk.js
 var error29 = () => {
   const Sizable = {
     string: { unit: "знаци", verb: "да имаат" },
@@ -7925,7 +7925,7 @@ function mk_default() {
     localeError: error29()
   };
 }
-// node_modules/zod/v4/locales/ms.js
+// ../../node_modules/zod/v4/locales/ms.js
 var error30 = () => {
   const Sizable = {
     string: { unit: "aksara", verb: "mempunyai" },
@@ -8032,7 +8032,7 @@ function ms_default() {
     localeError: error30()
   };
 }
-// node_modules/zod/v4/locales/nl.js
+// ../../node_modules/zod/v4/locales/nl.js
 var error31 = () => {
   const Sizable = {
     string: { unit: "tekens", verb: "heeft" },
@@ -8142,7 +8142,7 @@ function nl_default() {
     localeError: error31()
   };
 }
-// node_modules/zod/v4/locales/no.js
+// ../../node_modules/zod/v4/locales/no.js
 var error32 = () => {
   const Sizable = {
     string: { unit: "tegn", verb: "å ha" },
@@ -8250,7 +8250,7 @@ function no_default() {
     localeError: error32()
   };
 }
-// node_modules/zod/v4/locales/ota.js
+// ../../node_modules/zod/v4/locales/ota.js
 var error33 = () => {
   const Sizable = {
     string: { unit: "harf", verb: "olmalıdır" },
@@ -8359,7 +8359,7 @@ function ota_default() {
     localeError: error33()
   };
 }
-// node_modules/zod/v4/locales/ps.js
+// ../../node_modules/zod/v4/locales/ps.js
 var error34 = () => {
   const Sizable = {
     string: { unit: "توکي", verb: "ولري" },
@@ -8473,7 +8473,7 @@ function ps_default() {
     localeError: error34()
   };
 }
-// node_modules/zod/v4/locales/pl.js
+// ../../node_modules/zod/v4/locales/pl.js
 var error35 = () => {
   const Sizable = {
     string: { unit: "znaków", verb: "mieć" },
@@ -8582,7 +8582,7 @@ function pl_default() {
     localeError: error35()
   };
 }
-// node_modules/zod/v4/locales/pt.js
+// ../../node_modules/zod/v4/locales/pt.js
 var error36 = () => {
   const Sizable = {
     string: { unit: "caracteres", verb: "ter" },
@@ -8690,7 +8690,7 @@ function pt_default() {
     localeError: error36()
   };
 }
-// node_modules/zod/v4/locales/ro.js
+// ../../node_modules/zod/v4/locales/ro.js
 var error37 = () => {
   const Sizable = {
     string: { unit: "caractere", verb: "să aibă" },
@@ -8809,7 +8809,7 @@ function ro_default() {
     localeError: error37()
   };
 }
-// node_modules/zod/v4/locales/ru.js
+// ../../node_modules/zod/v4/locales/ru.js
 function getRussianPlural(count, one, few, many) {
   const absCount = Math.abs(count);
   const lastDigit = absCount % 10;
@@ -8965,7 +8965,7 @@ function ru_default() {
     localeError: error38()
   };
 }
-// node_modules/zod/v4/locales/sl.js
+// ../../node_modules/zod/v4/locales/sl.js
 var error39 = () => {
   const Sizable = {
     string: { unit: "znakov", verb: "imeti" },
@@ -9074,7 +9074,7 @@ function sl_default() {
     localeError: error39()
   };
 }
-// node_modules/zod/v4/locales/sv.js
+// ../../node_modules/zod/v4/locales/sv.js
 var error40 = () => {
   const Sizable = {
     string: { unit: "tecken", verb: "att ha" },
@@ -9184,7 +9184,7 @@ function sv_default() {
     localeError: error40()
   };
 }
-// node_modules/zod/v4/locales/ta.js
+// ../../node_modules/zod/v4/locales/ta.js
 var error41 = () => {
   const Sizable = {
     string: { unit: "எழுத்துக்கள்", verb: "கொண்டிருக்க வேண்டும்" },
@@ -9294,7 +9294,7 @@ function ta_default() {
     localeError: error41()
   };
 }
-// node_modules/zod/v4/locales/th.js
+// ../../node_modules/zod/v4/locales/th.js
 var error42 = () => {
   const Sizable = {
     string: { unit: "ตัวอักษร", verb: "ควรมี" },
@@ -9404,7 +9404,7 @@ function th_default() {
     localeError: error42()
   };
 }
-// node_modules/zod/v4/locales/tr.js
+// ../../node_modules/zod/v4/locales/tr.js
 var error43 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "olmalı" },
@@ -9509,7 +9509,7 @@ function tr_default() {
     localeError: error43()
   };
 }
-// node_modules/zod/v4/locales/uk.js
+// ../../node_modules/zod/v4/locales/uk.js
 var error44 = () => {
   const Sizable = {
     string: { unit: "символів", verb: "матиме" },
@@ -9618,11 +9618,11 @@ function uk_default() {
   };
 }
 
-// node_modules/zod/v4/locales/ua.js
+// ../../node_modules/zod/v4/locales/ua.js
 function ua_default() {
   return uk_default();
 }
-// node_modules/zod/v4/locales/ur.js
+// ../../node_modules/zod/v4/locales/ur.js
 var error45 = () => {
   const Sizable = {
     string: { unit: "حروف", verb: "ہونا" },
@@ -9732,7 +9732,7 @@ function ur_default() {
     localeError: error45()
   };
 }
-// node_modules/zod/v4/locales/uz.js
+// ../../node_modules/zod/v4/locales/uz.js
 var error46 = () => {
   const Sizable = {
     string: { unit: "belgi", verb: "bo‘lishi kerak" },
@@ -9842,7 +9842,7 @@ function uz_default() {
     localeError: error46()
   };
 }
-// node_modules/zod/v4/locales/vi.js
+// ../../node_modules/zod/v4/locales/vi.js
 var error47 = () => {
   const Sizable = {
     string: { unit: "ký tự", verb: "có" },
@@ -9950,7 +9950,7 @@ function vi_default() {
     localeError: error47()
   };
 }
-// node_modules/zod/v4/locales/zh-CN.js
+// ../../node_modules/zod/v4/locales/zh-CN.js
 var error48 = () => {
   const Sizable = {
     string: { unit: "字符", verb: "包含" },
@@ -10059,7 +10059,7 @@ function zh_CN_default() {
     localeError: error48()
   };
 }
-// node_modules/zod/v4/locales/zh-TW.js
+// ../../node_modules/zod/v4/locales/zh-TW.js
 var error49 = () => {
   const Sizable = {
     string: { unit: "字元", verb: "擁有" },
@@ -10166,7 +10166,7 @@ function zh_TW_default() {
     localeError: error49()
   };
 }
-// node_modules/zod/v4/locales/yo.js
+// ../../node_modules/zod/v4/locales/yo.js
 var error50 = () => {
   const Sizable = {
     string: { unit: "àmi", verb: "ní" },
@@ -10273,7 +10273,7 @@ function yo_default() {
     localeError: error50()
   };
 }
-// node_modules/zod/v4/core/registries.js
+// ../../node_modules/zod/v4/core/registries.js
 var _a2;
 var $output = Symbol("ZodOutput");
 var $input = Symbol("ZodInput");
@@ -10323,7 +10323,7 @@ function registry() {
 }
 (_a2 = globalThis).__zod_globalRegistry ?? (_a2.__zod_globalRegistry = registry());
 var globalRegistry = globalThis.__zod_globalRegistry;
-// node_modules/zod/v4/core/api.js
+// ../../node_modules/zod/v4/core/api.js
 function _string(Class2, params) {
   return new Class2({
     type: "string",
@@ -11243,7 +11243,7 @@ function _stringFormat(Class2, format, fnOrRegex, _params = {}) {
   const inst = new Class2(def);
   return inst;
 }
-// node_modules/zod/v4/core/to-json-schema.js
+// ../../node_modules/zod/v4/core/to-json-schema.js
 function initializeContext(params) {
   let target = params?.target ?? "draft-2020-12";
   if (target === "draft-4")
@@ -11595,7 +11595,7 @@ var createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) =
   extractDefs(ctx, schema);
   return finalize(ctx, schema);
 };
-// node_modules/zod/v4/core/json-schema-processors.js
+// ../../node_modules/zod/v4/core/json-schema-processors.js
 var formatMap = {
   guid: "uuid",
   url: "uri",
@@ -12133,7 +12133,7 @@ function toJSONSchema(input, params) {
   extractDefs(ctx, input);
   return finalize(ctx, input);
 }
-// node_modules/zod/v4/core/json-schema-generator.js
+// ../../node_modules/zod/v4/core/json-schema-generator.js
 class JSONSchemaGenerator {
   get metadataRegistry() {
     return this.ctx.metadataRegistry;
@@ -12192,9 +12192,9 @@ class JSONSchemaGenerator {
     return plainResult;
   }
 }
-// node_modules/zod/v4/core/json-schema.js
+// ../../node_modules/zod/v4/core/json-schema.js
 var exports_json_schema = {};
-// node_modules/zod/v4/classic/schemas.js
+// ../../node_modules/zod/v4/classic/schemas.js
 var exports_schemas2 = {};
 __export(exports_schemas2, {
   xor: () => xor,
@@ -12365,7 +12365,7 @@ __export(exports_schemas2, {
   ZodAny: () => ZodAny
 });
 
-// node_modules/zod/v4/classic/checks.js
+// ../../node_modules/zod/v4/classic/checks.js
 var exports_checks2 = {};
 __export(exports_checks2, {
   uppercase: () => _uppercase,
@@ -12399,7 +12399,7 @@ __export(exports_checks2, {
   endsWith: () => _endsWith
 });
 
-// node_modules/zod/v4/classic/iso.js
+// ../../node_modules/zod/v4/classic/iso.js
 var exports_iso = {};
 __export(exports_iso, {
   time: () => time2,
@@ -12440,7 +12440,7 @@ function duration2(params) {
   return _isoDuration(ZodISODuration, params);
 }
 
-// node_modules/zod/v4/classic/errors.js
+// ../../node_modules/zod/v4/classic/errors.js
 var initializer2 = (inst, issues) => {
   $ZodError.init(inst, issues);
   inst.name = "ZodError";
@@ -12475,7 +12475,7 @@ var ZodRealError = /* @__PURE__ */ $constructor("ZodError", initializer2, {
   Parent: Error
 });
 
-// node_modules/zod/v4/classic/parse.js
+// ../../node_modules/zod/v4/classic/parse.js
 var parse3 = /* @__PURE__ */ _parse(ZodRealError);
 var parseAsync2 = /* @__PURE__ */ _parseAsync(ZodRealError);
 var safeParse2 = /* @__PURE__ */ _safeParse(ZodRealError);
@@ -12489,7 +12489,7 @@ var safeDecode2 = /* @__PURE__ */ _safeDecode(ZodRealError);
 var safeEncodeAsync2 = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
 var safeDecodeAsync2 = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
 
-// node_modules/zod/v4/classic/schemas.js
+// ../../node_modules/zod/v4/classic/schemas.js
 var _installedGroups = /* @__PURE__ */ new WeakMap;
 function _installLazyMethods(inst, group, methods) {
   const proto = Object.getPrototypeOf(inst);
@@ -13776,7 +13776,7 @@ function preprocess(fn, schema) {
     out: schema
   });
 }
-// node_modules/zod/v4/classic/compat.js
+// ../../node_modules/zod/v4/classic/compat.js
 var ZodIssueCode = {
   invalid_type: "invalid_type",
   too_big: "too_big",
@@ -13800,7 +13800,7 @@ function getErrorMap() {
 }
 var ZodFirstPartyTypeKind;
 (function(ZodFirstPartyTypeKind2) {})(ZodFirstPartyTypeKind || (ZodFirstPartyTypeKind = {}));
-// node_modules/zod/v4/classic/from-json-schema.js
+// ../../node_modules/zod/v4/classic/from-json-schema.js
 var z = {
   ...exports_schemas2,
   ...exports_checks2,
@@ -14267,7 +14267,7 @@ function fromJSONSchema(schema, params) {
   };
   return convertSchema(normalized, ctx);
 }
-// node_modules/zod/v4/classic/coerce.js
+// ../../node_modules/zod/v4/classic/coerce.js
 var exports_coerce = {};
 __export(exports_coerce, {
   string: () => string3,
@@ -14292,7 +14292,7 @@ function date4(params) {
   return _coercedDate(ZodDate, params);
 }
 
-// node_modules/zod/v4/classic/external.js
+// ../../node_modules/zod/v4/classic/external.js
 config(en_default());
 // src/errors.ts
 class ConfigurationError extends Error {
@@ -14578,7 +14578,9 @@ function hardDisableReasoning(modelId) {
 function defaultEffortFor(slug) {
   if (slug === "grok-4.5")
     return "xhigh";
-  if (slug === "grok-4.3" || slug === "grok-4.20-0309-reasoning" || slug === "grok-4.20-multi-agent-0309" || slug.startsWith("kimi-") || /thinking|reason/i.test(slug)) {
+  if (slug === "kimi-k3")
+    return "max";
+  if (slug === "grok-4.3" || slug === "grok-4.20-0309-reasoning" || slug === "grok-4.20-multi-agent-0309" || slug.startsWith("kimi-k2") || /thinking|reason/i.test(slug)) {
     return "high";
   }
   if (slug.endsWith("-mini") || slug.endsWith("-flash") || slug.endsWith("-lite") || slug.endsWith("-low") || slug.endsWith("-air") || slug.endsWith("-turbo") || slug.includes("flash") || slug.includes("ultrafast") || slug.includes("composer")) {
@@ -14620,7 +14622,7 @@ function modelPolicy(modelId, catalog = loadModelCatalog()) {
       source: entry ? source : "heuristic"
     };
   }
-  const efforts = isGpt ? ["none", "minimal", "low", "medium", "high", "xhigh"] : ["low", "medium", "high", "xhigh"];
+  const efforts = isKimi ? ["low", "high", "max"] : isGpt ? ["none", "minimal", "low", "medium", "high", "xhigh"] : ["low", "medium", "high", "xhigh"];
   return {
     contextWindow,
     reasoning: { defaultEffort: defaultEffortFor(slug), efforts },

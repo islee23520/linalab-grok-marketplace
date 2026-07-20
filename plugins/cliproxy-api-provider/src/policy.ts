@@ -3,8 +3,8 @@ import path from "node:path"
 import { readFileSync, existsSync } from "node:fs"
 
 export type ReasoningPolicy = {
-  readonly defaultEffort: "low" | "medium" | "high" | "xhigh"
-  readonly efforts: readonly ("low" | "medium" | "high" | "xhigh" | "none" | "minimal")[]
+  readonly defaultEffort: "low" | "medium" | "high" | "xhigh" | "max"
+  readonly efforts: readonly ("low" | "medium" | "high" | "xhigh" | "none" | "minimal" | "max")[]
 }
 
 export type ModelPolicy = {
@@ -103,11 +103,13 @@ function hardDisableReasoning(modelId: string): boolean {
 function defaultEffortFor(slug: string): ReasoningPolicy["defaultEffort"] {
   // Product default for flagship Grok through CLIProxy.
   if (slug === "grok-4.5") return "xhigh"
+  // Kimi K3 docs: supports low | high | max, default max.
+  if (slug === "kimi-k3") return "max"
   if (
     slug === "grok-4.3" ||
     slug === "grok-4.20-0309-reasoning" ||
     slug === "grok-4.20-multi-agent-0309" ||
-    slug.startsWith("kimi-") ||
+    slug.startsWith("kimi-k2") ||
     /thinking|reason/i.test(slug)
   ) {
     return "high"
@@ -175,9 +177,19 @@ export function modelPolicy(modelId: string, catalog: ModelCatalog = loadModelCa
     }
   }
 
-  const efforts = isGpt
-    ? (["none", "minimal", "low", "medium", "high", "xhigh"] as const)
-    : (["low", "medium", "high", "xhigh"] as const)
+  // Effort vocabularies per backend:
+  //   OpenAI/Codex family: none | minimal | low | medium | high | xhigh
+  //   Grok reasoning:     low | medium | high | xhigh   (Grok exposes xhigh, not max)
+  //   Kimi K3:            low | high | max              (default max; no medium/xhigh)
+  //   Claude/Gemini/GLM:   low | medium | high | xhigh  (generic OpenAI-compatible)
+  //
+  // Default effort follows product policy: flagship Grok through CLIProxy -> xhigh;
+  // Kimi K3 -> "max"; lightweight variants -> medium; otherwise high.
+  const efforts = isKimi
+    ? (["low", "high", "max"] as const)
+    : isGpt
+      ? (["none", "minimal", "low", "medium", "high", "xhigh"] as const)
+      : (["low", "medium", "high", "xhigh"] as const)
 
   return {
     contextWindow,

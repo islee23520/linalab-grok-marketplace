@@ -56,6 +56,12 @@ describe("modelPolicy", () => {
     expect(policy.source).toBe("catalog")
   })
 
+  test("Given kimi-k3 from catalog When policy is resolved Then efforts are low|high|max and default max", () => {
+    const policy = modelPolicy("kimi-k3", REALISTIC)
+    expect(policy.reasoning?.defaultEffort).toBe("max")
+    expect(policy.reasoning?.efforts).toEqual(["low", "high", "max"])
+  })
+
   test("Given kimi-k2 catalog reasoning=false When policy is resolved Then reasoning disabled", () => {
     expect(modelPolicy("kimi-k2", REALISTIC).reasoning).toBeNull()
   })
